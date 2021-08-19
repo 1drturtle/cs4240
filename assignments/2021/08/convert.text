@@ -1,0 +1,26 @@
+# Binary/Octal/Decimal Conversion 08/19/2021
+# Chris Agrella
+
+Number 1
+1. Binary: **0b1110110**
+2. Octal: 0o166
+3. Decimal: 118
+4. Hexadecimal 0x76
+
+Number 2
+1. Binary: 0b1 0010 1110
+2. Octal: **0o456**
+3. Decimal: 302
+4. Hexadecimal: 0x12e
+
+Number 3
+1. Binary: 0b101010110
+2. Octal: 0o526
+3. Decimal: **342**
+4. Hexadecimal: 0x156
+
+Number 4
+1. Binary: 0b001111111111
+2. Octal: 0o1777
+3. Decimal: 1023
+4. Hexadecimal **0x3FF**
