@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Lab 1: Scientific Calculations</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="lab1.css">
+</head>
+<body>
+    <h2>Lab 1: Scientific Calculations</h2>
+
+<p><strong>Sample Question 0</strong> Compute 5*4.</p>
+
+<pre class="pybox">&gt;&gt;&gt; x = 5
+&gt;&gt;&gt; y = 4
+&gt;&gt;&gt; x*y
+20
+</pre>
+
+
+<p><strong>Question 1</strong> Given that light travels at 2.9979e8 (that's
+2.9979*108 in scientific notation) meters per second, figure out how fast light
+moves in miles per second. Then convert this to miles per hour.</p>
+
+<pre class='pybox'>
+&gt;&gt;&gt; light_speed = 2.9979E8
+&gt;&gt;&gt; light_speed_centimeters = light_speed * 100
+&gt;&gt;&gt; light_speed_inches = light_speed_centimeters / 2.54
+&gt;&gt;&gt; light_speed_feet = light_speed_inches / 12
+&gt;&gt;&gt; light_speed_miles = light_speed_feet / 5280
+&gt;&gt;&gt; light_speed_mph = light_speed_miles * (60 * 60)  # seconds -> minutes -> hours
+&gt;&gt;&gt; light_speed_mph
+670611130.9949893
+</pre>
+
+<p><strong>Question 2</strong> Tell the time it take for light to go from the sun to the earth if the mean distance of the sun to the earth is 93.0 million miles.</p>
+
+<pre class='pybox'>
+>>> light_speed_mph = 670611130.9949893  # derived from previous problem
+>>> sun_distance = 93 * 1_000_000
+>>> time_in_hours = sun_distance / light_speed_mph
+
+</pre>
+
+
+</body></html>

@@ -1,0 +1,18 @@
+h1, h2, .display
+{
+    text-align:center;
+}
+.pybox
+{
+    margin-left:auto;
+    margin-right:auto;
+    width:75%;
+    background-color:lightgreen;
+    border: solid 1px black;
+    padding:1em;
+}
+body
+{
+    margin:1em;
+    background-color:#FFF8E7;
+}
