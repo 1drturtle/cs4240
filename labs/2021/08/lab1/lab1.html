@@ -27,7 +27,7 @@ moves in miles per second. Then convert this to miles per hour.</p>
 &gt;&gt;&gt; light_speed_inches = light_speed_centimeters / 2.54
 &gt;&gt;&gt; light_speed_feet = light_speed_inches / 12
 &gt;&gt;&gt; light_speed_miles = light_speed_feet / 5280
-&gt;&gt;&gt; light_speed_mph = light_speed_miles * (60 * 60)  # seconds -> minutes -> hours
+&gt;&gt;&gt; light_speed_mph = light_speed_miles * (60 * 60)  # hours * (60s * 60m)
 &gt;&gt;&gt; light_speed_mph
 670611130.9949893
 </pre>
@@ -35,11 +35,68 @@ moves in miles per second. Then convert this to miles per hour.</p>
 <p><strong>Question 2</strong> Tell the time it take for light to go from the sun to the earth if the mean distance of the sun to the earth is 93.0 million miles.</p>
 
 <pre class='pybox'>
->>> light_speed_mph = 670611130.9949893  # derived from previous problem
->>> sun_distance = 93 * 1_000_000
->>> time_in_hours = sun_distance / light_speed_mph
+&gt;&gt;&gt; light_speed_mph = 670611131  # derived from previous problem, rounded
+&gt;&gt;&gt; sun_distance = 93 * 1_000_000
+&gt;&gt;&gt; time_in_hours = sun_distance / light_speed_mph
+&gt;&gt;&gt; time_in_mins = time_in_hours * 60
+&gt;&gt;&gt; time_in_mins
+8.320768537914411
 
 </pre>
 
+<p><strong>Question 3</strong> Use the fact that a liter of water weighs one kilogram and that one gallon of water weighs 8.33 lbs to determine the number of cubic inches in a gallon and the number of pounds in a cubic foot of water.</p>
 
+<pre class='pybox'>
+&gt;&gt;&gt; # cubic inches per gallon
+&gt;&gt;&gt; gallon_water = 8.33
+&gt;&gt;&gt; kg_water = 8.33 / 2.204
+&gt;&gt;&gt; cubic_centimeters = kg_water * 1000  # 1 kg = 1 L
+&gt;&gt;&gt; cubic_inches = cubic_centimeters / 2.54
+&gt;&gt;&gt; cubic_inches
+1487.988910642068
+&gt;&gt;&gt; # pounds per cubic foot of water
+&gt;&gt;&gt; cubic_inches = 12 ** 3
+&gt;&gt;&gt; cubic_centimeters = cubic_inches * (2.54 ** 3)
+&gt;&gt;&gt; water_kg = cubic_centimeters / 1000
+&gt;&gt;&gt; water_lb = water_kg * 2.204
+&gt;&gt;&gt; water_lb
+62.41032988876802
+</pre>
+
+
+<p><strong>Question 4</strong> Let us assume that humans weigh an average of 140 lbs and that humans have about the same density as water. If the population of the earth is 7.0 billion humans, estimate the total volume of humanity in cubic miles. Do you find this counterintuitive?</p>
+
+<pre class='pybox'>
+&gt;&gt;&gt; human_weight_lb = 140
+&gt;&gt;&gt; human_weight_kg = human_weight_lb / 2.204
+&gt;&gt;&gt; human_volume_cm3 = human_weight_kg * 1000  # 1 kg of water is 1L, 1L = 1000 cm^3
+&gt;&gt;&gt; all_human_volume_cm3 = human_volume_cm3 * 7E9
+&gt;&gt;&gt; all_human_volume_in3 = all_human_volume_cm3 / (2.54 ** 3)
+&gt;&gt;&gt; all_human_volume_ft3 = all_human_volume_in3 / (12 ** 3)
+&gt;&gt;&gt; all_human_volume_mi3 = all_human_volume_ft3 / (5280 ** 3)
+&gt;&gt;&gt; all_human_volume_mi3
+0.10667627196340702
+</pre>
+This is counterintuitive because the humans would be crushed, and it's not realistically possible to cram all of humanity in such a small space as there would be holes and other problems.
+
+<p><strong>Question 5</strong> An acre-foot of water is enough water to cover one acre one foot deep. How many gallons of water are in an acre-foot? What does that water weigh in tons?</p>
+
+<pre class='pybox'>
+&gt;&gt;&gt; water_area_mi2 = 1/640
+&gt;&gt;&gt; water_area_ft2 = water_area_mi2 * (5820**2)
+&gt;&gt;&gt; water_area_in2 = water_area_ft2 * (12 ** 2)
+&gt;&gt;&gt; water_area_in3 = water_area_in2 * 12
+&gt;&gt;&gt; water_area_in3
+91455480.0
+&gt;&gt;&gt; water_area_cm3 = water_area_in3 * (2.54 ** 3)
+&gt;&gt;&gt; water_liters = water_area_cm3 / 1000
+&gt;&gt;&gt; water_kg = water_liters
+&gt;&gt;&gt; water_lb = water_kg / 2.204
+&gt;&gt;&gt; water_gallons = water_lb / 8.33
+&gt;&gt;&gt; water_gallons
+81630.84492839169
+&gt;&gt;&gt; water_tons = water_lb / 2000
+&gt;&gt;&gt; water_tons
+339.99246912675136
+</pre>
 </body></html>
