@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Boolean Order of Operations</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="base.css">
+</head>
+<body>
+    <h2>Boolean Order of Operations</h2>
+
+<pre class='pybox'>
+>>> True or False and False  # and higher than or
+True
+</pre>
+The operator with the most precedence is not, the second most precedence is and, and the least precedence is or.
+
+<pre class='pybox'>
+>>> not False or True  # not higher than or
+True
+>>> not True and False  # not higher than and
+False
+>>> not (True and False)
+True
+>>> not False and False
+False
+>>> not (False and False)
+True
+</pre>
+</body>
