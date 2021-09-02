@@ -138,7 +138,7 @@ run_test(sort_string, 'abcdefgh', ['hgfedcba'])
 def are_anagrams(s1, s2):
     """prec: s1 and s2 are strings
     postc: return True if s1 is an anagram of s2, case INSENSITIVE."""
-    return sort_string(s2) in sort_string(s1)
+    return sort_string(s2) == sort_string(s1)
 print("*************** Problem 6 Tests ***************")
 test = ["golf", "flog"]
 expected = True
