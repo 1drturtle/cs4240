@@ -147,3 +147,4 @@ test = ["butter", "rebut"]
 expected = False
 run_test(are_anagrams, expected, test)
 run_test(are_anagrams, expected=True, args=['racecar', 'racecar'])
+run_test(are_anagrams, expected=True, args=['elbow', 'below'])
