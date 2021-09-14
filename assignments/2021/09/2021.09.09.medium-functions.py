@@ -41,7 +41,7 @@ def days_left_in_year(year, month, day):
     """prec:  year/month/day is a valid date
     postc: returns the number of days left in the year
     (Feb 15 is the 46th day of year 2000)."""
-    return 365 - day_in_year(year, month, day)
+    return (365 + is_leap(year)) - day_in_year(year, month, day)
 ###################Problem 4################
 def days_to_graduation(year, month, day):
     """prec:  year/month/ is a valid date before graduation
@@ -101,8 +101,8 @@ def main():
     run_test(day_in_year, 46, [2000, 2, 15])
     run_test(day_in_year, 1, [2000, 1, 1])
     print("###################Problem 3################")
-    run_test(days_left_in_year, 364, [2000, 1, 1])
-    run_test(days_left_in_year, 319, [2000, 2, 15])
+    run_test(days_left_in_year, 365, [2000, 1, 1])
+    run_test(days_left_in_year, 320, [2000, 2, 15])
     print("###################Problem 4################")
     run_test(days_to_graduation, 1, [2021, 5, 28])
     run_test(days_to_graduation, 365, [2020, 5, 29])
@@ -111,7 +111,6 @@ def main():
     print("###################Problem 5################")
     run_test(dhms, '0:00:00:01', [1])
     run_test(dhms, f'1:00:00:01', [86401])
-    run_test(dhms, '7:')
     print("###################Problem 6################")
     run_test(water_closet, (11, 2, 1), ['Hello World'])
     run_test(water_closet, (11, 2, 2), ['hello\nworld'])
