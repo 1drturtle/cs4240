@@ -30,10 +30,10 @@ def run_test_float(function, expected, args):
         if close_enough(function(args), expected):
             print(f"PASS for case {args}")
         else:
-            print(f"FAIL because f({args}) != {expected}")
+            print(f"FAIL because f({args}) != {expected}. Failed Output: {function(args)}")
         return
     else:
         if close_enough(function(*args), expected):
             print(f"PASS for case {args}")
         else:
-            print(f"FAIL because f({args}) != {expected}")
+            print(f"FAIL because f({args}) != {expected}. Failed Output: {function(*args)}")
