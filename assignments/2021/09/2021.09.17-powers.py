@@ -1,6 +1,7 @@
 from run_tests import run_test, run_test_float
 from math import e
 
+
 def power_rec(base, exp):
     """prec:  base is a number, exp is an integer
     postc: returns base**exp using a recursive version of the

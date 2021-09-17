@@ -33,6 +33,7 @@ def run_test(function, expected, args):
                 f"FAIL because f({args}) != {expected}. Failed Output: {function(*args)}"
             )
 
+
 def run_test_float(function, expected, args):
     if type(args) == list and len(args) == 1:
         args = args[0]
