@@ -46,7 +46,11 @@ def paranoid_number(n):
     paranoid_number(1) = 3
     paranoid_number(n+2) = 5*paranoid_number(n-1) -  6*paranoid_number(n)
     """
-    return 0
+    # if n == 0:
+    #     return 1
+    # elif n == 1:
+    #     return 3
+    # return 5 * paranoid_number(n - 1) - 6 * paranoid_number(n)
 
 
 ######################Problem 6###########################
@@ -84,8 +88,9 @@ def main():
     print("*************** Problem 4 Tests **************")
     run_test(comb_nest, [12, 5], [[1, 2, 9], [1, 2, 2]])
     print("*************** Problem 5 Tests **************")
-    print(run_test(paranoid_number, 1, [0]))
-    print(run_test(paranoid_number, 3, [1]))
+    run_test(paranoid_number, 1, [0])
+    run_test(paranoid_number, 3, [1])
+    print(paranoid_number(3))
     print("*************** Problem 6 Tests **************")
     run_test(generate_anagrams, ["act", "atc", "cat", "cta", "tac", "tca"], ["cat"])
 

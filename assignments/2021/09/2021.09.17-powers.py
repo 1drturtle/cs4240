@@ -1,4 +1,4 @@
-from run_tests import run_test, run_test_float
+from rt import run_test, run_test_float
 from math import e
 
 
