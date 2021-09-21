@@ -1,15 +1,9 @@
 # ###########################################################
-
 #   Author: Chris Agrella
-
 #   Date created:  2021-09-17
-
 #   run_test Module
-
 #   FREE CODE FOR WRITING TESTS
-
 #   Usage is demonstrated on examples below
-
 # ################ DO NOT CHANGE THIS CODE ###################
 TOLERANCE = 1e-6
 

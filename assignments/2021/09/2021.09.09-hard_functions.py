@@ -5,7 +5,7 @@
 #
 # Make these happen using RECURSION!
 
-from rt import compare_floats, run_test, run_test_float
+from rt import run_test
 
 
 ###################Problem 1################
@@ -40,7 +40,7 @@ def power(base, exp):
 ###################Problem 3################
 def convert_to_binary(n):
     """prec: n is an integer
-    postc: retrns a string containing a binary representation of n.
+    postc: returns a string containing a binary representation of n.
     return"""
 
     if n == 0:
