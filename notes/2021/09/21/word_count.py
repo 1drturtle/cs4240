@@ -3,7 +3,7 @@ import sys
 
 def is_wanted_character(c):
 
-    return c.isalnum() or c == ' '  
+    return c.isalnum() or c == ' '
 
 
 def cleanup_word(word: str):
