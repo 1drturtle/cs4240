@@ -14,7 +14,6 @@ def rectangle(m, n):
     Postcondition:  returns a string containing
     a rectangle of *s to the screen that
     has m rows and n columns"""
-    # return '\n'.join(['*'*n for i in range(m)])
     if m == 0:
         return ""
     line = n * "*"

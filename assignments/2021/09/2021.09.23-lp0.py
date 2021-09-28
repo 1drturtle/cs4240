@@ -1,6 +1,10 @@
 from rt import run_test
 from typing import List
 
+# Chris Agrella
+# Lab Practical 0
+# 09/23/2021ko
+
 
 # ##################### Problem 1 #########################
 def describe_string(s):
@@ -51,12 +55,10 @@ def zipper_strings(a, b):
 
     for i, x in enumerate(a):
         out += x  # add first a
-        if len(b) == i + 1:  # if we are out of b, add the last b and the rest of a, breaking
-            out += b[i]
+        out += b[i]  # add the b
+        if len(b) == i + 1:  # if we are out of b, add the the rest of a, and break
             out += a[i + 1:]
             break
-        else:
-            out += b[i]  # otherwise add the corresponding character for b
     if len(b) > len(a):  # if b is larger than a, tack on the rest of b
         out += b[len(a):]
 
@@ -76,6 +78,7 @@ def maximum_product(lists: List[List[int]]):
         if len(x) == 0:  # empty list = 1
             out.append(1)
         else:
+            # can be replaced with itertools.product
             a = 1
             for i in x:
                 a *= i
@@ -137,3 +140,4 @@ run_test(nuggets, [4, 16], [20, [1, 2, 4, 8, 16]])
 run_test(nuggets, [3, 5], [8, [1, 2, 3, 4, 5]])
 run_test(nuggets, [1, 2, 3, 4, 5, 6, 7, 8], [100, [1, 2, 3, 4, 5, 6, 7, 8]])
 run_test(nuggets, [], [5, [6, 7, 8, 9, 10]])
+run_test(nuggets, [1, 3, 9], [13, [1, 3, 5, 7, 9]])  # both [1, 3, 9] and [1, 5, 7] could be valid outputs

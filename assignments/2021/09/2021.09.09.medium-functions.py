@@ -3,7 +3,7 @@
 #  Date: 09/09/2021
 #  medium_functions.py
 #################################################
-from run_tests import run_test, run_test_float, close_enough
+from rt import run_test, run_test_float
 ###################FREE CODE######################################
 def is_leap(year):
     """prec:  year is a modern year
