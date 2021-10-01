@@ -8,5 +8,9 @@
     "python.linting.banditEnabled": false,
     "python.linting.mypyEnabled": true,
     "jupyter.jupyterServerType": "local",
-    "python.formatting.provider": "black"
+    "python.formatting.provider": "black",
+    "java.project.sourcePaths": [
+        "notes\\2021\\10\\01",
+        "projects\\java"
+    ]
 }

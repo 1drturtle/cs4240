@@ -6,3 +6,5 @@ __pycache__
 *.txt
 *.dump
 */*/*.txt
+*.class
+**.class
