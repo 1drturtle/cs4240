@@ -14,8 +14,7 @@ def zipper(a: list, b: list):
             out.append(b[j])
             j += 1
 
-    out += a[k:]
-    out += b[j:]
+    out += a[k:] + b[j:]
 
     return out
 

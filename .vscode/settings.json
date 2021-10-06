@@ -11,6 +11,7 @@
     "python.formatting.provider": "black",
     "java.project.sourcePaths": [
         "notes\\2021\\10\\01",
-        "projects\\java"
+        "projects\\java",
+        "notes\\2021\\10\\05"
     ]
 }
