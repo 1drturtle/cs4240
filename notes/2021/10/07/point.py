@@ -22,10 +22,13 @@ class Point:
 
         return f"<Point x={self.x}, y={self.y}>"
     
+    def __str__(self):
+        return f'({self.x}, {self.y})'
+    
     def __eq__(self, o):
         if type(o) != Point:
             return False
-        if o is self:
+        if self is o:
             return True
         return self.x == o.x and self.y == o.y
 

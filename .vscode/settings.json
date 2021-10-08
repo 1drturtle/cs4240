@@ -10,6 +10,7 @@
     "jupyter.jupyterServerType": "local",
     "python.formatting.provider": "black",
     "java.project.sourcePaths": [
-        "notes\\2021\\10\\07"
+        "notes\\2021\\10\\07",
+        "notes\\2021\\10\\08"
     ]
 }
