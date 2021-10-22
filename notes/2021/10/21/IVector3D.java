@@ -1,27 +1,29 @@
 public interface IVector3D
 {
     /**
-     * @param that another IVector3D
-     * @return  the dot product of this vector and that.
+     * Returns the dot product of this and that.
+     * @param that The {@link IVector3D} to multiply with.
+     * @return {@link IVector3D} with the dot product of this and that.
      */
     public int dot(Vector3D that);
     /**
-     * @param that another IVector3D
-     * @return  the cross product of this vector and that.
+     * The cross-product of the two {@link Vector3D}.
+     * @param that The {@link Vector3D} to use.
+     * @return the {@link Vector3D} containing the cross product of this and that.
      */
     public IVector3D cross(Vector3D that);
     /**
      * @param scalar a integer we are scalar multiplying this vector by
-     * @return  the that*this
+     * @return The Vector3D containing this multiplied by scalar.
      */
     public IVector3D scalarMultiply(int scalar);
     /**
-     * @param scalar a integer we are scalar multiplying this vector by
+     * @param that The {@link Vector3D} to add.
      * @return this + that
      */
     public IVector3D add(Vector3D that);
     /**
-     * @param scalar a integer we are scalar multiplying this vector by
+     * @param that The {@link Vector3D} to subtract.
      * @return this - that
      */
     public IVector3D subtract(Vector3D that);
