@@ -9,3 +9,5 @@ __pycache__
 */*/*.txt
 *.class
 **.class
+doc/*
+doc
