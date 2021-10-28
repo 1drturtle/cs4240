@@ -15,6 +15,6 @@ public abstract class Employee extends Person
 
     @Override
     public String toString() {
-        return String.format("Employee: %s %s %s (ID %s)", title, this.getFirstName(), this.getLastName());
+        return String.format("Employee: %s %s (ID %s)", title, this.getName());
     }
 }

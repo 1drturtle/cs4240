@@ -21,6 +21,11 @@ public abstract class Person
         return lastName;
     }
 
+    public String getName()
+    {
+        return firstName + " " + lastName;
+    }
+
     public String getID()
     {
         return ID;
