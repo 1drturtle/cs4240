@@ -3,7 +3,6 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.stream.Collectors;
 
 public class SearchHugh
 {
@@ -33,7 +32,8 @@ public class SearchHugh
                         System.exit(1);
                     }
                 });
-        } catch (IOException e) {
+        } catch (IOException e)
+        {
             System.err.println("IO Exception");
             System.exit(1);
         }
