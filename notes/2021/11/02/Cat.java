@@ -12,12 +12,12 @@ public class Cat
     public static void main(String[] args)
     {
         Path p = Path.of(args[0]);
+
         
         try(BufferedReader reader = Files.newBufferedReader(p))
         {
-
             reader.lines()
-             .filter(Cat::lineTest)
+            //  .filter(Cat::lineTest)
              .forEach(System.out::println);
 
         } catch (IOException e) 
