@@ -12,7 +12,7 @@ import java.util.Collections;
  * to split as in python, use .split("\\s+") on the string you wish
  * to split on whitespace
  *
- * Collections.sort() will sort an arraylist in place.
+ * Collections.sort() will sort an ArrayList in place.
  * 
  * DO NOT COMPARE DOUBLES FOR EQUALITY!!!
  * Use the function closeEnough I have provided for free.  It will
@@ -52,9 +52,10 @@ public class PracticeLB1
         System.out.println("Test -> charFreq");
         ArrayList<Double> charTest = new ArrayList<Double>(Collections.nCopies(26, 0.0));
         System.out.println(charFreq("").equals(charTest));
-        charTest.set(0, 3.0);
+        charTest.set(0, 1.0);
         System.out.println(charFreq("aaa").equals(charTest));
-        charTest.set(25, 1.0);
+        charTest.set(0, 0.75);
+        charTest.set(25, 0.25);
         System.out.println(charFreq("aaaz").equals(charTest));
         System.out.println("Test -> factorialDigit");
         System.out.println(factorialDigit(10, 8) == 2);
@@ -175,18 +176,30 @@ public class PracticeLB1
     public static ArrayList<Double> charFreq(String s)
     {
         s = s.toLowerCase();
-        ArrayList<Double> list = new ArrayList<Double>(Collections.nCopies(26, 0.0));
+        ArrayList<Double> chars = new ArrayList<Double>(Collections.nCopies(26, 0.0)); // [0.0]*26
+
+        int count = 0;
+
         for (char c : s.toCharArray())
         {
             int codePoint = Character.valueOf(c);
-            if (codePoint <= 122 && codePoint >= 97) // >= a, <= z
+            // if (codePoint <= 122 && codePoint >= 97) // >= a, <= z
+            if (Character.isAlphabetic(codePoint))
             {
-                codePoint -= 97; // lowercase A code is 97, making all letters 0-25
-                list.set(codePoint, list.get(codePoint) + 1);
+                codePoint -= 'a'; // lowercase A code is 97, making all letters 0-25
+                chars.set(codePoint, chars.get(codePoint) + 1);
+                count += 1;
             }
         }
 
-        return list;
+        for (int i = 0; i < chars.size(); i++) {
+            if (chars.get(i) != 0)
+            {
+                chars.set(i, chars.get(i) / count);
+            }
+        }
+
+        return chars;
     }
     /**
      * This finds the number of times a specified digit
