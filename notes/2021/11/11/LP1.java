@@ -134,71 +134,77 @@ public class LP1
     */
     public static void main(String[] args)
     {
-        System.out.println("- Test -> sum");
+        Test sum_test = new Test("sum");
         ArrayList<BigInteger> x_list = new ArrayList<>();
         x_list.add(BigInteger.ONE);
         x_list.add(BigInteger.valueOf(10));
-        System.out.println(sum(x_list).equals(BigInteger.valueOf(11)));
+        sum_test.run(x_list, sum(x_list), BigInteger.valueOf(11));
         x_list.clear();
-        System.out.println(sum(x_list).equals(BigInteger.ZERO));
+        sum_test.run(x_list, sum(x_list), BigInteger.ZERO);
         for (int i = 0; i <= 100; i++) // 0 - 100 inclusive
         {
             x_list.add(BigInteger.valueOf(i));
         }
-        System.out.println(sum(x_list).equals(BigInteger.valueOf(5050)));
+        sum_test.run(x_list, sum(x_list), BigInteger.valueOf(5050));
+        sum_test.finish();
         
         
-        System.out.println("- Test -> aerate");
-        System.out.println(aerate("aardwolf", 2).equals("arwl"));
-        System.out.println(aerate("bacchanalia", 3).equals("bcni"));
-        System.out.println(aerate("s", 3).equals("s"));
-        System.out.println(aerate("", 3).equals(""));
-        System.out.println(aerate("s", 3).equals("s"));
-        System.out.println(aerate("abcdefghij", 4).equals("aei"));
-
-        System.out.println("- Test -> echoy");
-        System.out.println(echoy("cowpie").equals("coowwwppppiiiiieeeeee"));
-        System.out.println(echoy("abc").equals("abbccc"));
-        System.out.println(echoy("123").equals("122333"));
-        System.out.println(echoy("").equals(""));
+        Test aerate_test = new Test("aerate");
+        aerate_test.run("\"aardwolf\", 2", aerate("aardwolf", 2), "arwl");
+        aerate_test.run("\"bacchanalia\", 3", aerate("bacchanalia", 3), "bcni");
+        aerate_test.run("\"s\", 3", aerate("s", 3), "s");
+        aerate_test.run("\"\", 3", aerate("", 3), "");
+        aerate_test.run("\"abcdefghij\", 4", aerate("abcdefghij", 4), "aei");
+        aerate_test.finish();
 
 
-        System.out.println("- Test -> finger");
+        Test echoy_test = new Test("echoy");
+        echoy_test.run("cowpie", echoy("cowpie"), "coowwwppppiiiiieeeeee");
+        echoy_test.run("abc", echoy("abc"), "abbccc");
+        echoy_test.run("123", echoy("123"), "122333");
+        echoy_test.run("", echoy(""), "");
+        echoy_test.finish();
+
+
+        Test finger_test = new Test("finger");
         ArrayList<BigInteger> f_list = new ArrayList<>();
         f_list.add(BigInteger.valueOf(10));
         f_list.add(BigInteger.valueOf(88));
-        System.out.println(finger(f_list) == 16);
+        finger_test.run(f_list, finger(f_list), 16);
         f_list.add(BigInteger.valueOf(23895));
-        System.out.println(finger(f_list) == 18);
+        finger_test.run(f_list, finger(f_list), 18);
         f_list.clear();
-        System.out.println(finger(f_list) == 0);
+        finger_test.run(f_list, finger(f_list), 0);
         // factorial of 20 == 2432902008176640000
         // sum of digits is 54
         for (int i = 0; i <= 20; i++)
         {
             f_list.add(BigInteger.valueOf(i));
         }
-        System.out.println(finger(f_list) == 54);
+        finger_test.run(f_list, finger(f_list), 54);
+        finger_test.finish();
 
 
-        System.out.println("- Test -> pseudoGrep");
+        Test greps_test =  new Test("psuedoGrep");
         ArrayList<String> grep_test = new ArrayList<>();
         grep_test.add("helloabc");
         grep_test.add("abc");
         grep_test.add("hello");
         grep_test.add("");
-        System.out.println(pseudoGrep(grep_test, "abc").size() == 2);
-        System.out.println(pseudoGrep(grep_test, "hello").size() == 2);
-        System.out.println(pseudoGrep(grep_test, "").size() == 4);
+        greps_test.run(grep_test, pseudoGrep(grep_test, "abc").size(), 2);
+        greps_test.run(grep_test, pseudoGrep(grep_test, "hello").size(), 2);
+        greps_test.run(grep_test, pseudoGrep(grep_test, "").size(), 4);
         grep_test.clear();
-        System.out.println(pseudoGrep(grep_test, "abc").size() == 0);
+        greps_test.run(grep_test, pseudoGrep(grep_test, "abc").size(), 0);
+        greps_test.finish();
 
 
-        System.out.println("- Test -> daysFromNow");
-        System.out.println(daysFromNow(0).equals(LocalDate.now()));
-        System.out.println(daysFromNow(10_000).equals(LocalDate.of(2049, 03, 29))); 
-        System.out.println(daysFromNow(-10_000).equals(LocalDate.of(1994, 06, 26))); 
-        System.out.println(daysFromNow(-1).equals(LocalDate.now().minusDays(1)));
-        System.out.println(daysFromNow(-365).equals(LocalDate.now().minusDays(365)));
+        Test days_test = new Test("daysFromNow");
+        days_test.run(0, daysFromNow(0), LocalDate.now());
+        days_test.run(10_000, daysFromNow(10_000), LocalDate.of(2049, 03, 29));
+        days_test.run(-10_000, daysFromNow(-10_000), LocalDate.of(1994, 06, 26));
+        days_test.run(-1, daysFromNow(-1), LocalDate.now().minusDays(1));
+        days_test.run(-365, daysFromNow(-365), LocalDate.now().minusDays(365));
+        days_test.finish();
     }
 }
