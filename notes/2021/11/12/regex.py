@@ -23,12 +23,12 @@ for line in file_contents:
 
 # Sort by value
 sorted_words = sorted(word_count.items(), key=itemgetter(1), reverse=True)
-with open('out/ouput_py_num.txt', 'w') as fp:
+with open('out/output_py_num.txt', 'w') as fp:
     for x, y in sorted_words:
         fp.write(f'{x}: {y}\n')
 
 # Sort Alphabetically
 sorted_words = sorted(word_count.items())
-with open('out/ouput_py_alpha.txt', 'w') as fp:
+with open('out/output_py_alpha.txt', 'w') as fp:
     for x, y in sorted_words:
         fp.write(f'{x}: {y}\n')
