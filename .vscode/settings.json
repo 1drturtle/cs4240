@@ -1,13 +1,12 @@
 {
-    "python.linting.flake8Enabled": false,
+    "python.linting.flake8Enabled": true,
     "python.linting.enabled": true,
     "python.linting.pylintEnabled": false,
     "python.linting.banditEnabled": false,
-    "python.linting.mypyEnabled": true,
+    "python.linting.mypyEnabled": false,
     "jupyter.jupyterServerType": "local",
     "python.formatting.provider": "black",
     "java.project.sourcePaths": [
-        "notes/2021/11/05",
-        "labs/2021/11"
+        "notes\\2021\\11\\12"
     ]
 }
