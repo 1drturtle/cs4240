@@ -1,7 +1,6 @@
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -59,7 +58,7 @@ public class Regex
                 word_map.put(word, word_map.getOrDefault(word, 0) + 1);    
             }
 
-            for (Map.Entry<String, Integer> x : word_map.entrySet()) 
+            for (var x : word_map.entrySet()) 
             {
                 wr.write(String.format("%s: %s\n", x.getKey(), x.getValue()));    
             }
