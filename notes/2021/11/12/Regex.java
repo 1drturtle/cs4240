@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.Map.Entry;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -45,18 +44,12 @@ public class Regex
             BufferedWriter wr2 = Files.newBufferedWriter(Path.of("out/output_java_num.txt"));
         )
         {
-            List<String> words = lines.flatMap(line -> Stream.of(line.split("\\s+")))
-                                      .collect(Collectors.toList());
-
-            // Alphabetical
             TreeMap<String, Integer> word_map = new TreeMap<>((o1, o2) -> o1.compareTo(o2));
 
-            for (String word : words) 
-            {
-                word = cleanWord(word);
-                if (word.equals("")) continue;
-                word_map.put(word, word_map.getOrDefault(word, 0) + 1);    
-            }
+            lines.flatMap(line -> Stream.of(line.split("\\s+")))
+                 .map(x -> cleanWord(x))
+                 .filter(x -> !x.equals(""))
+                 .forEach(x -> word_map.put(x, word_map.getOrDefault(x, 0) + 1));
 
             for (var x : word_map.entrySet()) 
             {
