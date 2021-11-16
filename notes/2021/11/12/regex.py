@@ -19,6 +19,8 @@ for line in file_contents:
     words = line.split()
     for word in words:
         word = clean_word(word)
+        if not word:
+            continue
         word_count[word] = word_count.get(word, 0) + 1
 
 # Sort by value

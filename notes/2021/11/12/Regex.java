@@ -16,11 +16,11 @@ public class Regex
 {
     public static String cleanWord(String word)
     {
-        word = word.toLowerCase().strip().replaceAll("\\W", "").replaceAll("\\s", "");
-        return word;
+        return word.toLowerCase().strip().replaceAll("\\W", "").replaceAll("\\s", "");
     }
 
     // https://stackoverflow.com/questions/109383/sort-a-mapkey-value-by-values
+    // modified to fit this use-case
     public static <K, V extends Comparable<? super V>> LinkedHashMap<K, V> sortByValue(Map<K, V> map) {
         List<Entry<K, V>> list = new ArrayList<>(map.entrySet());
         list.sort(Entry.comparingByValue());
